@@ -27,10 +27,12 @@ class EIN_Scraper:
         )
         drop_down = Select(drop_down_button)
         drop_down.select_by_visible_text('Texas')
-
+    
+    def select_search(self):
+        css_selector = 'button[aria-label="Search"]'
         search_button = WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located(
-                (By.CSS_SELECTOR, 'button[aria-label="Search"]')
+                (By.CSS_SELECTOR, css_selector)
             )
         )
         search_button.click()
