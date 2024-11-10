@@ -8,10 +8,10 @@ from selenium.webdriver.support import expected_conditions as EC
 
 class NineNineZero_Scraper:
     def __init__(self, url: str):
-        # options = Options()
-        # options.add_argument('--headless')
-        # self.driver = webdriver.Firefox(options=options)
-        self.driver = webdriver.Firefox()
+        options = Options()
+        options.add_argument('--headless')
+        self.driver = webdriver.Firefox(options=options)
+        # self.driver = webdriver.Firefox()
         self.url = url
 
     def connect_irs(self):

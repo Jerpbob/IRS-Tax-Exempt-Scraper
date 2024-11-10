@@ -85,14 +85,16 @@ class EIN_Scraper:
             ein_990 = self.filter_ein(ein_lst)
             extracted_ein.extend(ein_990)
             # time.sleep(.5)
+        self.driver.close()
+        self.driver.quit()
         return extracted_ein
     
     def scrape(self, page_lst):
         self.connect_irs()
         self.select_texas()
+        self.select_search()
         self.results_per_page_250()
         ein_lst = self.extract_pages(page_lst)
-        self.driver.quit()
         return ein_lst
     
 
